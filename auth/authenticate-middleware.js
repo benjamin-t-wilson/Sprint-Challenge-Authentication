@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
   if (req.decodedJwt) {
     next();
   } else if (token) {
-    jwt.verify(token, secrets.jwtSecret, (err, decodedJwt) => {
+    jwt.verify(token, "whatAboutSecondBreakfast?", (err, decodedJwt) => {
       if (err) {
         res.status(401).json({ message: "Failed to verify authorization" });
       } else {
